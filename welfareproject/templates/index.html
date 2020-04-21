@@ -1,0 +1,62 @@
+<!doctype html>
+{% load static%}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/head.css' %}">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+ <h1 style="font-family: Algerian;font-size: 70px;color: red;text-align: center;padding: 60px;text-shadow: 5px 5px 5px black">WELFARE MANAGEMENT SYSTEM</h1>
+ <marquee><font style="font-family: 'Arial Black';color: deeppink;font-size: 20px"> POWER has only one DUTY secure the SOCIAL WELFARE people!!!!</font></marquee>
+ <br>
+ <br>
+
+ <h2 style="font-family:'Arial Black';font-size: 30px;text-shadow: 5px 5px 5px orange;text-align: center">CORPORATE EMPLOYEE WELFARE NETWORK</h2>
+ <br>
+<form method="post">
+    {% csrf_token %}
+ <table align="center">
+     <tr>
+         <th colspan="2" style="text-align: center;color: chocolate;font-size: 20px;font-family: Algerian">LOGIN PAGE</th>
+     </tr>
+     <br>
+     <tr>
+         <th>USERNAME</th>
+         <th><input type="text" placeholder="enter u r username" name="a1" required></th>
+     </tr>
+     <tr>
+         <th>PASSWORD</th>
+         <th><input type="password" placeholder="***************" required name="a2"></th>
+     </tr>
+     <tr>
+         <th>USER TYPE</th>
+         <th><select name="a3">
+             <option>ADMIN</option>
+             <option>USER</option>
+         </select> </th>
+     </tr>
+     <tr>
+         <th colspan="2" style="text-align: center"><br><button type="submit" class="btn btn-primary">LOGIN</button> </th>
+     </tr>
+     {% for x in messages %}
+         <tr>
+         <th style="text-align: center;font-family: 'Agency FB';color: red;font-size: 20px" colspan="2">{{ x }}</th>
+         </tr>
+     {% endfor %}
+ </table>
+</form>
+<br>
+ <h2 style="text-align: center;font-size: 50px"><a href="{% url 'user_reg' %}">Register NEW User</a> </h2>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
